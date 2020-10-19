@@ -26,16 +26,17 @@ function About() {
           <h4>My Profile</h4>
           {profile.map((item) => (
             <div className="about__profileDetails" key={item.id}>
-              <p>Name : {item.name}</p>
-              <p>Address : {item.address.city}</p>
-              <p>
-                Birth :{" "}
-                {`${item.birth.date} ${item.birth.month} ${item.birth.year}`}
-              </p>
-              <p>Contacts : </p>
-              <ul>
-                <li>Phone : {item.contacts.phone}</li>
-              </ul>
+              <div className="card">
+                <div className="card-body">
+                  <h5 className="card-title">Name : {item.name}</h5>
+                  <h6 className="card-subtitle mb-2 text-muted">
+                    {item.contacts.email}
+                  </h6>
+                  <p className="card-text">
+                    {`${item.birth.date} ${item.birth.month} ${item.birth.year}`}
+                  </p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
