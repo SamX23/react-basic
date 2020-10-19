@@ -1,0 +1,55 @@
+[
+  {
+    "id": 1,
+    "name": "Sami Kalammallah",
+    "firstname": "Sami",
+    "lastname": "Kalammallah",
+    "gender": "male",
+    "birth": {
+      "place": "bandung",
+      "date": "23",
+      "month": "april",
+      "year": "1995"
+    },
+    "contacts": {
+      "phone": "089657511134",
+      "email": "skalexsong@gmail.com",
+      "whatsapp": "6289657511134",
+      "web": "https://samx23.github.io/"
+    },
+    "address": {
+      "street": "Leuwipanjang no.8",
+      "city": "Bandung",
+      "state": "West Java",
+      "country": "Indonesia"
+    },
+    "status": {
+      "marriage": true,
+      "kids": 2
+    },
+    "skill": {
+      "programming": {
+        "language": ["html", "css", "javascript", "java", "python"],
+        "webdevelopment": {
+          "frontend": ["react", "next-js", "chakra-ui", "material-ui"],
+          "backend": "nodejs",
+          "database": "firestore",
+          "cms": "wordpress"
+        },
+        "android": "android studio"
+      },
+      "design": ["photoshop", "autocad"],
+      "language": ["english", "indonesian", "sundanese"],
+      "technical": ["electronics", "technician", "stuff"],
+      "driving": ["car", "motorcycle"]
+    },
+    "hobby": [
+      "fatherling",
+      "coding",
+      "gaming",
+      "cycling",
+      "swimming",
+      "speeding"
+    ]
+  }
+]
