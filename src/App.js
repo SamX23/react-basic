@@ -1,4 +1,5 @@
 import React from "react";
+import { AppProvider } from "./store";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Home from "./Home";
@@ -9,22 +10,24 @@ import Header from "./Header";
 
 function App() {
   return (
-    <Router>
-      <div className="App center">
-        <Header />
-        <Switch>
-          <Route path="/rest">
-            <Rest />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+    <AppProvider>
+      <Router>
+        <div className="App">
+          <Header />
+          <Switch>
+            <Route path="/rest">
+              <Rest />
+            </Route>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
+    </AppProvider>
   );
 }
 

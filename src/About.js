@@ -1,10 +1,8 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import profile from "./profile.json";
-import appContext from "./store";
 
 function About() {
-  const storeContext = useContext(appContext);
-  const [visited, setVisited] = useState(storeContext);
+  const [visited, setVisited] = useState(0);
   const [show, setShow] = useState(false);
 
   useEffect(() => {

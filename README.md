@@ -8,7 +8,7 @@ Built using :
 - Bootstrap
 - React Router Dom
 - React Context
-- React Hook
+- React Hook / Custom Hook
 - Rest API
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

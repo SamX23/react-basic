@@ -1,10 +1,11 @@
-import React, { useContext, useEffect, useState } from "react";
-import { counterContext } from "./store";
+import React, { useEffect, useState } from "react";
+import { SetTheme, UpdateTheme } from "./store";
 import Items from "./Items";
 
 function Home() {
-  const storeContext = useContext(appContext);
-  const [counter, setCounter] = useState(storeContext);
+  const [counter, setCounter] = useState(0);
+  const dark = SetTheme();
+  const changeTheme = UpdateTheme();
 
   useEffect(() => {
     console.log("Home was mounted !");
@@ -19,6 +20,13 @@ function Home() {
 
   const count = () => setCounter((x) => (x += 1));
 
+  const themes = {
+    backgroundColor: dark ? "#333" : "#ccc",
+    color: dark ? "#CCC" : "#333",
+    padding: "2rem",
+    margin: "2rem",
+  };
+
   return (
     <div>
       <h1>This Homepage</h1>
@@ -27,6 +35,8 @@ function Home() {
         Count : {(counter > 5 && "Enough! please reset.") || counter}
       </button>
       <button onClick={() => setCounter(0)}>Reset</button>
+      <button onClick={changeTheme}>Change Block</button>
+      <div style={themes}>Block</div>
     </div>
   );
 }

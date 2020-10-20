@@ -1,20 +1,29 @@
-import React, { createContext } from "react";
+import React, { createContext, useContext, useState } from "react";
 
-const AppContext = createContext();
-const CounterContext = createContext(0);
 const ThemeContext = createContext();
+const ThemeUpdateContext = createContext();
 
+// Custom Hook
+export function SetTheme() {
+  return useContext(ThemeContext);
+}
+
+export function UpdateTheme() {
+  return useContext(ThemeUpdateContext);
+}
 
 export function AppProvider({ children }) {
-    const []
-    function toggleTheme() {
-        
-    }
+  const [darkTheme, setDarkTheme] = useState(true);
+
+  function toggleTheme() {
+    setDarkTheme((prevTheme) => !prevTheme);
+  }
+
   return (
     <ThemeContext.Provider value={darkTheme}>
-      <AppContext.Provider value={CounterContext}>
-        {childen}
-      </AppContext.Provider>
+      <ThemeUpdateContext.Provider value={toggleTheme}>
+        {children}
+      </ThemeUpdateContext.Provider>
     </ThemeContext.Provider>
   );
 }
