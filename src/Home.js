@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import appContext from "./store";
+import { counterContext } from "./store";
 import Items from "./Items";
 
 function Home() {

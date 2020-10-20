@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from "react";
 
 function Rest() {
-  const [poke, setPoke] = useState({ data: [] });
+  const [poke, setPoke] = useState({});
 
   useEffect(() => {
     fetch("https://pokeapi.co/api/v2/pokemon")
       .then((res) => res.json())
       .then((data) => {
-        setPoke({ data: data.results });
+        setPoke(data);
       })
       .catch(console.log);
   }, []);
 
   console.log(typeof poke);
-  console.log(typeof poke.data);
-  console.log(poke.data);
+  console.log(poke.id);
+  console.log(poke.name);
 
   return (
     <div>
