@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { SetContext, UpdateContext } from "../context/store.js";
-import Items from "../components/Items.jsx";
+import { SetContext, UpdateContext } from "../context/store";
+import Items from "../components/Items";
 
-function Home() {
+export default function Home() {
   // hook setter and getter
   const [counter, setCounter] = useState(0);
   // custom hook calls for setter and getter from context
@@ -43,5 +43,3 @@ function Home() {
     </div>
   );
 }
-
-export default Home;

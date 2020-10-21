@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import profile from "../profile.json";
 
-function About() {
+export default function About() {
   const [visited, setVisited] = useState(0);
   const [show, setShow] = useState(false);
 
@@ -42,5 +42,3 @@ function About() {
     </div>
   );
 }
-
-export default About;

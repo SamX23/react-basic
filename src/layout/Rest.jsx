@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-function Rest() {
+export default function Rest() {
   const [poke, setPoke] = useState({});
 
   useEffect(() => {
@@ -11,11 +11,7 @@ function Rest() {
       })
       .catch(console.log);
   }, []);
-
-  console.log(typeof poke);
-  console.log(poke.id);
-  console.log(poke.name);
-
+  console.log(poke);
   return (
     <div>
       <center>
@@ -33,5 +29,3 @@ function Rest() {
     </div>
   );
 }
-
-export default Rest;

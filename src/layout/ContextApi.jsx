@@ -1,7 +1,9 @@
-import React, { useContext, useEffect } from "react";
+import React, { lazy, Suspense, useContext, useEffect } from "react";
 import { Store } from "../context/store";
 
-import "../styles/Rickmorty.css";
+import "../styles/EpisodeList.css";
+
+const EpisodesList = lazy(() => import("../components/EpisodeList"));
 
 function ContextApiContainer() {
   const { state, dispatch } = useContext(Store);
@@ -41,38 +43,29 @@ function ContextApiContainer() {
     return dispatch(dispatchItem);
   };
 
+  const props = {
+    episodes: state.episodes,
+    toggleFav: toggleFav,
+    favourites: state.favourites,
+  };
+
   return (
-    <div className="Rickmorty__episodes">
-      <div className="Episodes__header">
-        {console.log(state)}
-        <h1>Rick and Morty</h1>
-        <p>Pick the favourite episodes</p>
-        <div className="Episodes__favourites">
-          Favourite(s) {state.favourites.length}
+    <Suspense
+      fallback={<div className="Loading__screen">Loading Page .....</div>}
+    >
+      <div className="Episode__list">
+        <div className="Episodes__header">
+          <h1>Rick and Morty</h1>
+          <p>Pick the favourite episodes</p>
+          <div className="Episodes__favourites">
+            Favourite(s) {state.favourites.length}
+          </div>
+        </div>
+        <div className="Episodes__content">
+          <EpisodesList {...props} />
         </div>
       </div>
-      <div className="Episodes__content">
-        {state.episodes.map((episode) => (
-          <div className="Episodes__layout" key={episode.id}>
-            <img
-              src={episode.image.medium}
-              alt={`Rick and Morty ${episode.name}`}
-            />
-            <h6>{episode.name}</h6>
-            <div>
-              <p>
-                Season: {episode.season} | Number: {episode.number}
-              </p>
-              <button onClick={() => toggleFav(episode)}>
-                <span role="img" aria-label="love">
-                  ♥️
-                </span>
-              </button>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
+    </Suspense>
   );
 }
 

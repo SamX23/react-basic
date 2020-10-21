@@ -1,7 +1,7 @@
 import React from "react";
-import Item from "./Item.jsx";
+import Item from "./Item";
 
-function Items() {
+export default function Items() {
   const book = ["Buku 1", "Buku 2", "Buku 3"];
 
   return (
@@ -12,5 +12,3 @@ function Items() {
     </ul>
   );
 }
-
-export default Items;

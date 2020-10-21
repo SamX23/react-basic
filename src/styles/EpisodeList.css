@@ -1,4 +1,4 @@
-.Rickmorty__episodes {
+.Episode__list {
   display: flex;
   flex-direction: column;
 }
@@ -8,6 +8,7 @@
   position: sticky;
   top: 0;
   justify-content: space-between;
+  align-items: center;
   background: white;
   border-bottom: 1px solid black;
   padding: 1rem;
@@ -16,6 +17,7 @@
 .Episodes__content {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .Episodes__layout {
@@ -26,4 +28,9 @@
 .Episodes__layout:hover {
   border: tomato dashed;
   background-color: azure;
+}
+
+.Episode__details {
+  display: flex;
+  justify-content: space-between;
 }
