@@ -39,6 +39,7 @@ function Home() {
       <button onClick={() => setCounter(0)}>Reset</button>
       <button onClick={toggleTheme}>Change Block</button>
       <div style={themes}>Block</div>
+      <button onClick={() => alert("Woy error")}>Alert!</button>
     </div>
   );
 }

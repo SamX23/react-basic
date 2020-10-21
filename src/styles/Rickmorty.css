@@ -1,0 +1,29 @@
+.Rickmorty__episodes {
+  display: flex;
+  flex-direction: column;
+}
+
+.Episodes__header {
+  display: flex;
+  position: sticky;
+  top: 0;
+  justify-content: space-between;
+  background: white;
+  border-bottom: 1px solid black;
+  padding: 1rem;
+}
+
+.Episodes__content {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Episodes__layout {
+  padding: 0.5rem;
+  max-width: 270px;
+}
+
+.Episodes__layout:hover {
+  border: tomato dashed;
+  background-color: azure;
+}

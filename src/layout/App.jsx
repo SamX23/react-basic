@@ -5,8 +5,8 @@ import Home from "./Home.jsx";
 import About from "./About.jsx";
 import Header from "../components/Header.jsx";
 import Rest from "./Rest.jsx";
-import "./App.css";
-import RestRickMorty from "./RestRickMorty.jsx";
+import "../styles/App.css";
+import ContextApiContainer from "./ContextApi.jsx";
 
 export default function App() {
   return (
@@ -15,7 +15,7 @@ export default function App() {
         <Header />
         <Switch>
           <Route path="/context-api">
-            <RestRickMorty />
+            <ContextApiContainer />
           </Route>
           <Route path="/rest">
             <Rest />

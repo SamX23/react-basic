@@ -10,6 +10,7 @@ Built using :
 - React Context
 - React Hook / Custom Hook
 - Rest API
+- Hosted by vercel
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
