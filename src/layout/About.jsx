@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import profile from "./profile.json";
+import profile from "../profile.json";
 
 function About() {
   const [visited, setVisited] = useState(0);

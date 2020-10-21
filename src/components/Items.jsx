@@ -1,5 +1,5 @@
 import React from "react";
-import Item from "./Item";
+import Item from "./Item.jsx";
 
 function Items() {
   const book = ["Buku 1", "Buku 2", "Buku 3"];
