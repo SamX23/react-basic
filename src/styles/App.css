@@ -26,3 +26,7 @@
 .header__nav > a:hover {
   background-color: blanchedalmond;
 }
+
+.card {
+  max-width: 500px;
+}

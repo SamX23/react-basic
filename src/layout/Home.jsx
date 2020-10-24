@@ -30,16 +30,26 @@ export default function Home() {
   };
 
   return (
-    <div>
-      <h1>This Homepage</h1>
-      <Items />
-      <button onClick={count}>
-        Count : {(counter > 5 && "Enough! please reset.") || counter}
-      </button>
-      <button onClick={() => setCounter(0)}>Reset</button>
-      <button onClick={toggleTheme}>Change Block</button>
-      <div style={themes}>Block</div>
-      <button onClick={() => alert("Woy error")}>Alert!</button>
+    <div className="home">
+      <div className="home__top">
+        <h1>This Homepage</h1>
+        <Items />
+        <button onClick={count}>
+          Count : {(counter > 5 && "Enough! please reset.") || counter}
+        </button>
+        <button onClick={() => setCounter(0)}>Reset</button>
+        <button onClick={toggleTheme}>Change Block</button>
+        <div style={themes}>Block</div>
+      </div>
+      <div className="home__middle">
+        <div className="editor__input">
+          <h3>Text editor input</h3>
+        </div>
+
+        <div className="editor__output">
+          <h6>This is output from text editor</h6>
+        </div>
+      </div>
     </div>
   );
 }
