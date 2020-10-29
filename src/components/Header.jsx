@@ -9,6 +9,8 @@ export default function Header() {
         <Link to="/about">About</Link>
         <Link to="/rest">Rest</Link>
         <Link to="/context-api">Context Api</Link>
+        <Link to="/login">Sign In</Link>
+        <Link to="/register">Sign Up</Link>
       </nav>
     </header>
   );
