@@ -9,18 +9,17 @@ function ContextApiContainer() {
   const { state, dispatch } = useContext(Store);
 
   useEffect(() => {
-    state.episodes.length === 0 &&
-      fetch(
-        "https://api.tvmaze.com/singlesearch/shows?q=rick-&-morty&embed=episodes"
-      )
-        .then((res) => res.json())
-        .then((res) =>
-          dispatch({
-            type: "FETCH_DATA",
-            item: res._embedded.episodes,
-          })
-        );
-  }, [state.episodes.length, dispatch]);
+    fetch(
+      "https://api.tvmaze.com/singlesearch/shows?q=rick-&-morty&embed=episodes"
+    )
+      .then((res) => res.json())
+      .then((res) =>
+        dispatch({
+          type: "FETCH_DATA",
+          item: res._embedded.episodes,
+        })
+      );
+  }, [dispatch]);
 
   const toggleFav = (episode) => {
     const itemInFav = state.favourites.includes(episode);
@@ -62,7 +61,11 @@ function ContextApiContainer() {
           </div>
         </div>
         <div className="Episodes__content">
-          <EpisodesList {...props} />
+          {state && state.episodes.length > 0 ? (
+            <EpisodesList {...props} />
+          ) : (
+            <div>Loading ...</div>
+          )}
         </div>
       </div>
     </Suspense>
