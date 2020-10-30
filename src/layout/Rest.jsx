@@ -31,7 +31,7 @@ export default function Rest() {
         pokeDetails.map((i) => (
           <div key={i.name} className="card mb-3">
             <div className="row no-gutters">
-              <div class="col-md-4">
+              <div className="col-md-4">
                 <img
                   className="card-img"
                   src={i.sprites.front_default}

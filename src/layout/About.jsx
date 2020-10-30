@@ -1,20 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { Store } from "../context/store";
 import profile from "../profile.json";
 
 export default function About() {
-  const [visited, setVisited] = useState(0);
+  const { state, dispatch } = useContext(Store);
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    setVisited((x) => (x += 1));
-  }, []);
+    dispatch({
+      type: "VISITING",
+      item: 1,
+    });
+  }, [dispatch]);
 
   const showAbout = () => (!show ? setShow(true) : setShow(false));
 
   return (
     <div className="about">
       <h1>This is about page</h1>
-      <p>About page has been visited for {visited} times!</p>
+      <p>You visited this page for {state.visited.length} times!</p>
       <div className="about__button">
         <button onClick={showAbout}>Show my details</button>
       </div>

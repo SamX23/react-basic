@@ -1,6 +1,7 @@
 export const initialState = {
   episodes: [],
   favourites: [],
+  visited: [],
 };
 
 export function reducer(state, action) {
@@ -15,6 +16,11 @@ export function reducer(state, action) {
       return {
         ...state,
         favourites: action.item,
+      };
+    case "VISITING":
+      return {
+        ...state,
+        visited: [...state.visited, action.item],
       };
     default:
       return state;
