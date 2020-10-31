@@ -1,9 +1,43 @@
-import React from "react";
+import React, { useContext, useState } from "react";
+import { Store } from "../context/store";
+import { useHistory } from "react-router-dom";
+import styled from "@emotion/styled";
+
+const Container = styled.div`
+  margin-top: 5vh;
+`;
 
 export default function Register() {
+  const { state, dispatch } = useContext(Store);
+  const history = useHistory();
+  const [user, setUser] = useState({
+    login: true,
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    address: {
+      address: "",
+      additionalAddress: "",
+      state: "",
+      country: "",
+      zip: 0,
+    },
+  });
+
+  const submitID = (e) => {
+    e.preventDefault();
+    dispatch({
+      type: "USER_LOGIN",
+      item: user,
+    });
+    console.log(user);
+    history.push("/");
+  };
+
   return (
-    <div className="Register container">
-      <form>
+    <Container className="Register container">
+      <form onSubmit={submitID}>
         <div className="form-row">
           <div className="form-group col-md-6">
             <label>First Name</label>
@@ -11,6 +45,8 @@ export default function Register() {
               type="text"
               className="form-control"
               placeholder="First name"
+              value={user.firstName}
+              onChange={(e) => setUser({ ...user, firstName: e.target.value })}
             />
           </div>
           <div className="form-group col-md-6">
@@ -19,6 +55,8 @@ export default function Register() {
               type="text"
               className="form-control"
               placeholder="Last name"
+              value={user.lastName}
+              onChange={(e) => setUser({ ...user, lastName: e.target.value })}
             />
           </div>
         </div>
@@ -30,6 +68,8 @@ export default function Register() {
               className="form-control"
               id="inputEmail"
               placeholder="email@domain.com"
+              value={user.email}
+              onChange={(e) => setUser({ ...user, email: e.target.value })}
             />
           </div>
           <div className="form-group col-md-6">
@@ -39,6 +79,8 @@ export default function Register() {
               className="form-control"
               id="inputPasword"
               placeholder="p4ssw0rd!@#"
+              value={user.password}
+              onChange={(e) => setUser({ ...user, password: e.target.value })}
             />
             <small id="passwordHelpBlock" className="form-text text-muted">
               Password must be 8 characters minimum, contain letters, numbers,
@@ -53,6 +95,13 @@ export default function Register() {
             className="form-control"
             id="inputAddress"
             placeholder="1234 Main St"
+            value={user.address.address}
+            onChange={(e) =>
+              setUser({
+                ...user,
+                address: { ...user.address, address: e.target.value },
+              })
+            }
           />
         </div>
         <div className="form-group">
@@ -62,20 +111,63 @@ export default function Register() {
             className="form-control"
             id="inputAddressAddition"
             placeholder="Apartment, studio, or floor"
+            value={user.address.additionalAddress}
+            onChange={(e) =>
+              setUser({
+                ...user,
+                address: { ...user.address, additionalAddress: e.target.value },
+              })
+            }
           />
         </div>
         <div className="form-row">
           <div className="form-group col-md-6">
-            <label>City</label>
-            <input type="text" className="form-control" id="inputCity" />
+            <label>State</label>
+            <input
+              type="text"
+              className="form-control"
+              id="inputState"
+              placeholder="West Java"
+              value={user.address.state}
+              onChange={(e) =>
+                setUser({
+                  ...user,
+                  address: { ...user.address, state: e.target.value },
+                })
+              }
+            />
           </div>
           <div className="form-group col-md-4">
-            <label>City</label>
-            <input type="text" className="form-control" id="inputCity" />
+            <label>Country</label>
+            <input
+              type="text"
+              className="form-control"
+              id="inputCountry"
+              placeholder="Indonesia"
+              value={user.address.country}
+              onChange={(e) =>
+                setUser({
+                  ...user,
+                  address: { ...user.address, country: e.target.value },
+                })
+              }
+            />
           </div>
           <div className="form-group col-md-2">
             <label>Zip</label>
-            <input type="text" className="form-control" id="inputZip" />
+            <input
+              type="number"
+              className="form-control"
+              id="inputZip"
+              placeholder="12345"
+              value={user.address.zip}
+              onChange={(e) =>
+                setUser({
+                  ...user,
+                  address: { ...user.address, zip: e.target.value },
+                })
+              }
+            />
           </div>
         </div>
 
@@ -83,6 +175,6 @@ export default function Register() {
           Register
         </button>
       </form>
-    </div>
+    </Container>
   );
 }

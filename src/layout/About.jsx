@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { Store } from "../context/store";
 import profile from "../profile.json";
 
@@ -14,15 +15,34 @@ export default function About() {
   }, [dispatch]);
 
   const showAbout = () => (!show ? setShow(true) : setShow(false));
+  const user = state.user;
 
   return (
     <div className="about">
       <h1>This is about page</h1>
       <p>You visited this page for {state.visited.length} times!</p>
-      <div className="about__button">
-        <button onClick={showAbout}>Show my details</button>
+      <div className="aboutUser">
+        {user.login ? (
+          <div>
+            <p>First Name : {user.firstName}</p>
+            <p>last Name : {user.lastName}</p>
+            <p>Email : {user.email}</p>
+          </div>
+        ) : (
+          <div className="about__prompt">
+            <p>Please register to see your account</p>
+            {/* <button>
+              <Link to="/login">Login</Link>
+            </button> */}
+            <button>
+              <Link to="/register">Register</Link>
+            </button>
+          </div>
+        )}
       </div>
-
+      <div className="about__button">
+        <button onClick={showAbout}>Show Details from JSON</button>
+      </div>
       {show && (
         <div className="about__profile">
           <h4>My Profile</h4>
