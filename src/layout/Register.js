@@ -22,15 +22,15 @@ export default function Register() {
   });
 
   const Container = styled.div`
-    margin-top: 5vh;
+    margintop: "5vh";
   `;
 
   const FormRow = styled.form`
-    padding: 5px;
+    padding: "5px";
   `;
 
   const FormGroup = styled.form`
-    padding: 5px;
+    padding: "5px";
   `;
 
   const submitID = (e) => {
