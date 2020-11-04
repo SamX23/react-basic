@@ -5,7 +5,7 @@
 Built using :
 
 - CRA (Create-React-App)
-- Bootstrap
+- React-Bootstrap & emotion
 - React Router Dom
 - React Context
 - React Hook / Custom Hook

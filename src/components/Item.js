@@ -1,5 +1,9 @@
 import React from "react";
+import styled from "@emotion/styled";
 
 export default function Item({ item }) {
-  return <li>{item}</li>;
+  const LiItem = styled.li`
+    text-decoration: none;
+  `;
+  return <LiItem>{item}</LiItem>;
 }

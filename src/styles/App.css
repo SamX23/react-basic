@@ -7,14 +7,6 @@
   background-color: aquamarine;
 }
 
-.header__nav > a {
-  padding: 10px;
-  color: #61dafb;
-}
-
-.header__nav > a:hover {
-  background-color: blanchedalmond;
-}
 .card {
   max-width: 500px;
 }

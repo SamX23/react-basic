@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { SetContext, UpdateContext } from "../context/store";
+import HomeHeader from "../components/HomeHeader";
 import Items from "../components/Items";
 
 export default function Home() {
@@ -31,17 +32,17 @@ export default function Home() {
 
   return (
     <div className="home">
-      <div className="home__top">
-        <h1>This Homepage</h1>
-        <Items />
-        <button onClick={count}>
-          Count : {(counter > 5 && "Enough! please reset.") || counter}
-        </button>
-        <button onClick={() => setCounter(0)}>Reset</button>
-        <button onClick={toggleTheme}>Change Block</button>
-        <div style={themes}>Block</div>
-      </div>
+      <HomeHeader
+        count={count}
+        setCounter={setCounter}
+        counter={counter}
+        toggleTheme={toggleTheme}
+        themes={themes}
+      />
+
       <div className="home__middle">
+        <Items />
+
         <div className="editor__input">
           <h3>Text editor input</h3>
         </div>
