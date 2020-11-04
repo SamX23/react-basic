@@ -3,10 +3,6 @@ import { Store } from "../context/store";
 import { useHistory } from "react-router-dom";
 import styled from "@emotion/styled";
 
-const Container = styled.div`
-  margin-top: 5vh;
-`;
-
 export default function Register() {
   const { state, dispatch } = useContext(Store);
   const history = useHistory();
@@ -25,6 +21,18 @@ export default function Register() {
     },
   });
 
+  const Container = styled.div`
+    margin-top: 5vh;
+  `;
+
+  const FormRow = styled.form`
+    padding: 5px;
+  `;
+
+  const FormGroup = styled.form`
+    padding: 5px;
+  `;
+
   const submitID = (e) => {
     e.preventDefault();
     dispatch({
@@ -38,7 +46,7 @@ export default function Register() {
   return (
     <Container className="Register container">
       <form onSubmit={submitID}>
-        <div className="form-row">
+        <FormRow className="form-row">
           <div className="form-group col-md-6">
             <label>First Name</label>
             <input
@@ -59,8 +67,8 @@ export default function Register() {
               onChange={(e) => setUser({ ...user, lastName: e.target.value })}
             />
           </div>
-        </div>
-        <div className="form-row">
+        </FormRow>
+        <FormRow className="form-row">
           <div className="form-group col-md-6">
             <label>Email</label>
             <input
@@ -87,8 +95,8 @@ export default function Register() {
               and must not contain spaces, special characters, or emoji.
             </small>
           </div>
-        </div>
-        <div className="form-group">
+        </FormRow>
+        <FormGroup className="form-group">
           <label>Address</label>
           <input
             type="text"
@@ -103,8 +111,8 @@ export default function Register() {
               })
             }
           />
-        </div>
-        <div className="form-group">
+        </FormGroup>
+        <FormGroup className="form-group">
           <label>Additional Address</label>
           <input
             type="text"
@@ -119,8 +127,8 @@ export default function Register() {
               })
             }
           />
-        </div>
-        <div className="form-row">
+        </FormGroup>
+        <FormRow className="form-row">
           <div className="form-group col-md-6">
             <label>State</label>
             <input
@@ -169,7 +177,7 @@ export default function Register() {
               }
             />
           </div>
-        </div>
+        </FormRow>
 
         <button type="submit" className="btn btn-primary">
           Register
