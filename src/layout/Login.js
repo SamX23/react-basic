@@ -1,8 +1,9 @@
 import React from "react";
+import Container from "../components/Container.js";
 
 export default function Login() {
   return (
-    <div className="Login">
+    <Container>
       <form>
         <p>Email</p>
         <input type="email" name="username" id="" />
@@ -11,6 +12,6 @@ export default function Login() {
         <button type="submit">Log In</button>
         <button type="reset">Reset</button>
       </form>
-    </div>
+    </Container>
   );
 }

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import JumboTron from "../components/JumboTron.js";
 
 export default function Rest() {
   const [pokeDetails, setPokeDetails] = useState([]);
@@ -24,9 +25,7 @@ export default function Rest() {
 
   return (
     <div>
-      <center>
-        <h1>Rest Contact List</h1>
-      </center>
+      <JumboTron JumboTronTitle="Rest Contact List" />
       {pokeDetails && pokeDetails.length > 0 ? (
         pokeDetails.map((i) => (
           <div key={i.name} className="card mb-3">

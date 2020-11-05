@@ -1,6 +1,8 @@
 import React, { useContext, useState } from "react";
 import { Store } from "../context/store";
 import { useHistory } from "react-router-dom";
+
+import Container from "../components/Container.js";
 import styled from "@emotion/styled";
 
 export default function Register() {
@@ -21,10 +23,6 @@ export default function Register() {
     },
   });
 
-  const Container = styled.div`
-    margintop: "5vh";
-  `;
-
   const FormRow = styled.form`
     padding: "5px";
   `;
@@ -44,7 +42,7 @@ export default function Register() {
   };
 
   return (
-    <Container className="Register container">
+    <Container>
       <form onSubmit={submitID}>
         <FormRow className="form-row">
           <div className="form-group col-md-6">

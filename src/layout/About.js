@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Store } from "../context/store";
+import JumboTron from "../components/JumboTron.js";
 import profile from "../profile.json";
 
 export default function About() {
@@ -19,7 +20,7 @@ export default function About() {
 
   return (
     <div className="about">
-      <h1>This is about page</h1>
+      <JumboTron JumboTronTitle="About Page" />
       <p>You visited this page for {state.visited.length} times!</p>
       <div className="aboutUser">
         {user.login ? (

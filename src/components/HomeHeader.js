@@ -1,4 +1,5 @@
 import React from "react";
+import JumboTron from "./JumboTron.js";
 
 import { Jumbotron, Button, Badge } from "react-bootstrap";
 import styled from "@emotion/styled";
@@ -10,9 +11,9 @@ export default function HomeHeader({
   toggleTheme,
   themes,
 }) {
-  const HeaderJumbotron = styled(Jumbotron)`
-    background-color: #282c34;
+  const HeaderJumbotron = styled("div")`
     color: #61dafb;
+    border-radius: 0;
     & > h1 {
       font-weight: 900;
     }
@@ -24,7 +25,7 @@ export default function HomeHeader({
   return (
     <div className="home__top">
       <HeaderJumbotron>
-        <h1>Basic of React</h1>
+        <JumboTron JumboTronTitle="Basic of React" />
         <Button onClick={count}>
           Count :
           <Badge variant="light">
