@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import JumboTron from "../components/JumboTron.js";
+import Loading from "../components/Loading";
+
+import styled from "@emotion/styled";
 
 export default function Rest() {
   const [pokeDetails, setPokeDetails] = useState([]);
@@ -21,10 +24,13 @@ export default function Rest() {
       .catch((e) => console.log(e));
   }, []);
 
-  console.log(pokeDetails);
-
+  const PokemonList = styled("div")`
+    & > .card {
+      max-width: 500px;
+    }
+  `;
   return (
-    <div>
+    <PokemonList>
       <JumboTron hTitle="Rest Contact List" />
       {pokeDetails && pokeDetails.length > 0 ? (
         pokeDetails.map((i) => (
@@ -49,8 +55,8 @@ export default function Rest() {
           </div>
         ))
       ) : (
-        <p>Loading...</p>
+        <Loading />
       )}
-    </div>
+    </PokemonList>
   );
 }

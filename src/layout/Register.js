@@ -6,7 +6,7 @@ import Container from "../components/Container.js";
 import styled from "@emotion/styled";
 
 export default function Register() {
-  const { state, dispatch } = useContext(Store);
+  const { dispatch } = useContext(Store);
   const history = useHistory();
   const [user, setUser] = useState({
     login: true,

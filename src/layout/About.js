@@ -20,7 +20,7 @@ export default function About() {
 
   return (
     <div className="about">
-      <JumboTron h1Title="About Page" />
+      <JumboTron hTitle="About Page" />
       <p>You visited this page for {state.visited.length} times!</p>
       <div className="aboutUser">
         {user.login ? (

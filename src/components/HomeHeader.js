@@ -1,7 +1,7 @@
 import React from "react";
 import JumboTron from "./JumboTron.js";
 
-import { Jumbotron, Button, Badge } from "react-bootstrap";
+import { Button, Badge } from "react-bootstrap";
 import styled from "@emotion/styled";
 
 export default function HomeHeader({

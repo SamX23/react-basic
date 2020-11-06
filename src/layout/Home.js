@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { SetContext, UpdateContext } from "../context/store";
+import styled from "@emotion/styled";
+
 import HomeHeader from "../components/HomeHeader";
 import Items from "../components/Items";
 import JumboTron from "../components/JumboTron.js";
@@ -31,8 +33,12 @@ export default function Home() {
     margin: "2rem",
   };
 
+  const HomePage = styled("div")`
+    width: 100%;
+  `;
+
   return (
-    <div className="home">
+    <HomePage>
       <HomeHeader
         count={count}
         setCounter={setCounter}
@@ -50,6 +56,6 @@ export default function Home() {
           <h6>This is output from text editor</h6>
         </div>
       </JumboTron>
-    </div>
+    </HomePage>
   );
 }

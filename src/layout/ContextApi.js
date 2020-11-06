@@ -1,6 +1,7 @@
 import React, { lazy, Suspense, useContext, useEffect } from "react";
 import { Store } from "../context/store";
 
+import Loading from "../components/Loading";
 import "../styles/EpisodeList.css";
 
 const EpisodesList = lazy(() => import("../components/EpisodeList"));
@@ -64,7 +65,7 @@ function ContextApiContainer() {
           {state && state.episodes.length > 0 ? (
             <EpisodesList {...props} />
           ) : (
-            <div>Loading ...</div>
+            <Loading />
           )}
         </div>
       </div>
