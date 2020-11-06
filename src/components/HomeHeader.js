@@ -25,7 +25,7 @@ export default function HomeHeader({
   return (
     <div className="home__top">
       <HeaderJumbotron>
-        <JumboTron JumboTronTitle="Basic of React" />
+        <JumboTron hTitle="Basic of React" />
         <Button onClick={count}>
           Count :
           <Badge variant="light">

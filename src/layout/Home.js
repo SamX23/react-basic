@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { SetContext, UpdateContext } from "../context/store";
 import HomeHeader from "../components/HomeHeader";
 import Items from "../components/Items";
+import JumboTron from "../components/JumboTron.js";
 
 export default function Home() {
   // hook setter and getter
@@ -40,17 +41,15 @@ export default function Home() {
         themes={themes}
       />
 
-      <div className="home__middle">
+      <JumboTron bgColor="black">
         <Items />
+      </JumboTron>
 
-        <div className="editor__input">
-          <h3>Text editor input</h3>
-        </div>
-
+      <JumboTron hTitle="Text editor input" bgColor="grey">
         <div className="editor__output">
           <h6>This is output from text editor</h6>
         </div>
-      </div>
+      </JumboTron>
     </div>
   );
 }

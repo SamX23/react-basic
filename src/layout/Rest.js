@@ -25,7 +25,7 @@ export default function Rest() {
 
   return (
     <div>
-      <JumboTron JumboTronTitle="Rest Contact List" />
+      <JumboTron hTitle="Rest Contact List" />
       {pokeDetails && pokeDetails.length > 0 ? (
         pokeDetails.map((i) => (
           <div key={i.name} className="card mb-3">
