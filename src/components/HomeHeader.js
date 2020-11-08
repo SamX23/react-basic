@@ -12,20 +12,23 @@ export default function HomeHeader({
   themes,
 }) {
   const HeaderJumbotron = styled("div")`
-    color: #61dafb;
-    border-radius: 0;
-    & > h1 {
-      font-weight: 900;
-    }
     & > button {
       margin: 5px;
     }
   `;
 
+  const ThemeButton = styled(Button)`
+    padding: 2rem;
+    margin: 2rem;
+  `;
+
   return (
     <div className="home__top">
       <HeaderJumbotron>
-        <JumboTron hTitle="Basic of React" />
+        <JumboTron hTitle="Basic of React">
+          <p>A Sami's personal training web to implement React Technology.</p>
+        </JumboTron>
+
         <Button onClick={count}>
           Count :
           <Badge variant="light">
@@ -34,9 +37,9 @@ export default function HomeHeader({
         </Button>
         <Button onClick={() => setCounter(0)}>Reset</Button>
         <Button onClick={toggleTheme}>Change Block</Button>
-        <Button style={themes} variant="primary">
+        <ThemeButton style={themes} variant="primary">
           Learn more
-        </Button>
+        </ThemeButton>
       </HeaderJumbotron>
     </div>
   );

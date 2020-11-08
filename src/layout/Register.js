@@ -2,8 +2,7 @@ import React, { useContext, useState } from "react";
 import { Store } from "../context/store";
 import { useHistory } from "react-router-dom";
 
-import Container from "../components/Container.js";
-import styled from "@emotion/styled";
+import { Form, Container, Row, Button } from "react-bootstrap";
 
 export default function Register() {
   const { dispatch } = useContext(Store);
@@ -23,14 +22,6 @@ export default function Register() {
     },
   });
 
-  const FormRow = styled.form`
-    padding: "5px";
-  `;
-
-  const FormGroup = styled.form`
-    padding: "5px";
-  `;
-
   const submitID = (e) => {
     e.preventDefault();
     dispatch({
@@ -42,11 +33,11 @@ export default function Register() {
   };
 
   return (
-    <Container>
-      <form onSubmit={submitID}>
-        <FormRow className="form-row">
-          <div className="form-group col-md-6">
-            <label>First Name</label>
+    <Container className="my-3">
+      <Form onSubmit={submitID}>
+        <Row>
+          <Form.Group className="col-md-6">
+            <Form.Label>First Name</Form.Label>
             <input
               type="text"
               className="form-control"
@@ -54,9 +45,9 @@ export default function Register() {
               value={user.firstName}
               onChange={(e) => setUser({ ...user, firstName: e.target.value })}
             />
-          </div>
-          <div className="form-group col-md-6">
-            <label>Last Name</label>
+          </Form.Group>
+          <Form.Group className="col-md-6">
+            <Form.Label>Last Name</Form.Label>
             <input
               type="text"
               className="form-control"
@@ -64,41 +55,38 @@ export default function Register() {
               value={user.lastName}
               onChange={(e) => setUser({ ...user, lastName: e.target.value })}
             />
-          </div>
-        </FormRow>
-        <FormRow className="form-row">
-          <div className="form-group col-md-6">
-            <label>Email</label>
-            <input
+          </Form.Group>
+        </Row>
+        <Row>
+          <Form.Group className="col-md-6">
+            <Form.Label>Email</Form.Label>
+            <Form.Control
               type="email"
-              className="form-control"
               id="inputEmail"
               placeholder="email@domain.com"
               value={user.email}
               onChange={(e) => setUser({ ...user, email: e.target.value })}
             />
-          </div>
-          <div className="form-group col-md-6">
-            <label>Password</label>
-            <input
+          </Form.Group>
+          <Form.Group className="col-md-6">
+            <Form.Label>Password</Form.Label>
+            <Form.Control
               type="password"
-              className="form-control"
               id="inputPasword"
               placeholder="p4ssw0rd!@#"
               value={user.password}
               onChange={(e) => setUser({ ...user, password: e.target.value })}
             />
-            <small id="passwordHelpBlock" className="form-text text-muted">
+            <Form.Text id="passwordHelpBlock" className="text-muted">
               Password must be 8 characters minimum, contain letters, numbers,
               and must not contain spaces, special characters, or emoji.
-            </small>
-          </div>
-        </FormRow>
-        <FormGroup className="form-group">
-          <label>Address</label>
-          <input
+            </Form.Text>
+          </Form.Group>
+        </Row>
+        <Form.Group>
+          <Form.Label>Address</Form.Label>
+          <Form.Control
             type="text"
-            className="form-control"
             id="inputAddress"
             placeholder="1234 Main St"
             value={user.address.address}
@@ -109,12 +97,11 @@ export default function Register() {
               })
             }
           />
-        </FormGroup>
-        <FormGroup className="form-group">
-          <label>Additional Address</label>
-          <input
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Additional Address</Form.Label>
+          <Form.Control
             type="text"
-            className="form-control"
             id="inputAddressAddition"
             placeholder="Apartment, studio, or floor"
             value={user.address.additionalAddress}
@@ -125,13 +112,12 @@ export default function Register() {
               })
             }
           />
-        </FormGroup>
-        <FormRow className="form-row">
-          <div className="form-group col-md-6">
-            <label>State</label>
-            <input
+        </Form.Group>
+        <Row>
+          <Form.Group className="col-md-6">
+            <Form.Label>State</Form.Label>
+            <Form.Control
               type="text"
-              className="form-control"
               id="inputState"
               placeholder="West Java"
               value={user.address.state}
@@ -142,12 +128,11 @@ export default function Register() {
                 })
               }
             />
-          </div>
-          <div className="form-group col-md-4">
-            <label>Country</label>
-            <input
+          </Form.Group>
+          <Form.Group className="col-md-4">
+            <Form.Label>Country</Form.Label>
+            <Form.Control
               type="text"
-              className="form-control"
               id="inputCountry"
               placeholder="Indonesia"
               value={user.address.country}
@@ -158,12 +143,11 @@ export default function Register() {
                 })
               }
             />
-          </div>
-          <div className="form-group col-md-2">
-            <label>Zip</label>
-            <input
+          </Form.Group>
+          <Form.Group className="col-md-2">
+            <Form.Label>Zip</Form.Label>
+            <Form.Control
               type="number"
-              className="form-control"
               id="inputZip"
               placeholder="12345"
               value={user.address.zip}
@@ -174,13 +158,11 @@ export default function Register() {
                 })
               }
             />
-          </div>
-        </FormRow>
+          </Form.Group>
+        </Row>
 
-        <button type="submit" className="btn btn-primary">
-          Register
-        </button>
-      </form>
+        <Button type="submit">Register</Button>
+      </Form>
     </Container>
   );
 }

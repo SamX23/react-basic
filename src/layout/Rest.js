@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import JumboTron from "../components/JumboTron.js";
 import Loading from "../components/Loading";
 
-import styled from "@emotion/styled";
+import { Container, Card, CardColumns } from "react-bootstrap";
 
 export default function Rest() {
   const [pokeDetails, setPokeDetails] = useState([]);
@@ -24,39 +24,35 @@ export default function Rest() {
       .catch((e) => console.log(e));
   }, []);
 
-  const PokemonList = styled("div")`
-    & > .card {
-      max-width: 500px;
-    }
-  `;
   return (
-    <PokemonList>
-      <JumboTron hTitle="Rest Contact List" />
-      {pokeDetails && pokeDetails.length > 0 ? (
-        pokeDetails.map((i) => (
-          <div key={i.name} className="card mb-3">
-            <div className="row no-gutters">
-              <div className="col-md-4">
-                <img
-                  className="card-img"
+    <>
+      <JumboTron hTitle="PokeDex" />
+      <Container className="text-center my-4">
+        <CardColumns>
+          {pokeDetails && pokeDetails.length > 0 ? (
+            pokeDetails.map((i) => (
+              <Card key={i.name} border="dark">
+                <Card.Img
+                  style={{ width: "10rem" }}
+                  variant="top"
                   src={i.sprites.front_default}
                   alt="pokemon sprites"
                 />
-              </div>
-              <div className="col-md-8">
-                <div className="card-body">
-                  <h5 className="card-title">{i.name}</h5>
-                  <h6 className="card-subtitle mb-2 text-muted">
+                <Card.Body>
+                  <Card.Subtitle className="mb-2 text-muted">
+                    {i.name.toUpperCase()}
+                  </Card.Subtitle>
+                  <Card.Text>
                     {i.abilities.length > 0 && i.abilities[0].ability.name}
-                  </h6>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))
-      ) : (
-        <Loading />
-      )}
-    </PokemonList>
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            ))
+          ) : (
+            <Loading />
+          )}
+        </CardColumns>
+      </Container>
+    </>
   );
 }

@@ -29,8 +29,6 @@ export default function Home() {
   const themes = {
     backgroundColor: themeState ? "#333" : "#ccc",
     color: themeState ? "#CCC" : "#333",
-    padding: "2rem",
-    margin: "2rem",
   };
 
   const HomePage = styled("div")`
@@ -38,7 +36,7 @@ export default function Home() {
   `;
 
   return (
-    <HomePage>
+    <HomePage className="text-center">
       <HomeHeader
         count={count}
         setCounter={setCounter}

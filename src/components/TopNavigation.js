@@ -1,12 +1,12 @@
 import React from "react";
 
-import { Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Nav, Navbar, NavDropdown, Image } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 
 import styled from "@emotion/styled";
 
-export default function Header() {
-  const HeaderBar = styled(Navbar)`
+export default function TopNavigation() {
+  const TopNav = styled(Navbar)`
     background-color: #20232a;
     min-height: 6vh;
     justify-content: space-around;
@@ -15,17 +15,17 @@ export default function Header() {
     }
   `;
 
-  const Home = styled(Navbar.Brand)`
+  const Logo = styled(Navbar.Brand)`
     & > span {
       font-weight: 600;
     }
   `;
 
   return (
-    <HeaderBar variant="dark">
+    <TopNav variant="dark">
       <LinkContainer to="/">
-        <Home>
-          <img
+        <Logo>
+          <Image
             width="40"
             height="30"
             className="d-inline-block align-top"
@@ -33,7 +33,7 @@ export default function Header() {
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/512px-React-icon.svg.png"
           />
           <span>Basic React</span>
-        </Home>
+        </Logo>
       </LinkContainer>
 
       <Nav>
@@ -66,6 +66,6 @@ export default function Header() {
           GitHub
         </Nav.Link>
       </Nav>
-    </HeaderBar>
+    </TopNav>
   );
 }
