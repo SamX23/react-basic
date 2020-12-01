@@ -5,6 +5,8 @@ import styled from "@emotion/styled";
 import HomeHeader from "../components/HomeHeader";
 import Items from "../components/Items";
 import JumboTron from "../components/JumboTron.js";
+import { HomeTypeBox } from "../components/HomeTypeBox";
+import { HomeCounter } from "../components/HomeCounter";
 
 export default function Home() {
   // hook setter and getter
@@ -49,11 +51,8 @@ export default function Home() {
         <Items />
       </JumboTron>
 
-      <JumboTron hTitle="Text editor input" bgColor="grey">
-        <div className="editor__output">
-          <h6>This is output from text editor</h6>
-        </div>
-      </JumboTron>
+      <HomeCounter />
+      <HomeTypeBox />
     </HomePage>
   );
 }
