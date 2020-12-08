@@ -24,7 +24,7 @@ export default function HomeHeader({
           <p>A Sami's personal training web to implement React Technology.</p>
         </JumboTron>
 
-        <Button onClick={count}>
+        <Button onClick={() => setCounter((x) => (x += 1))}>
           Count :
           <Badge variant="light">
             {(counter > 5 && "Enough! please reset.") || counter}

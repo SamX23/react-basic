@@ -26,7 +26,7 @@ export default function Home() {
     console.log("counter has been set !");
   }, [counter]);
 
-  const count = () => setCounter((x) => (x += 1));
+  // const count = () => setCounter((x) => (x += 1));
 
   const themes = {
     backgroundColor: themeState ? "#333" : "#ccc",
@@ -40,7 +40,6 @@ export default function Home() {
   return (
     <HomePage className="text-center">
       <HomeHeader
-        count={count}
         setCounter={setCounter}
         counter={counter}
         toggleTheme={toggleTheme}
@@ -50,7 +49,6 @@ export default function Home() {
       <JumboTron bgColor="black">
         <Items />
       </JumboTron>
-
       <HomeCounter />
       <HomeTypeBox />
     </HomePage>
