@@ -15,9 +15,8 @@ const ContextApiContainer = lazy(() => import("./ContextApi"));
 export default function App() {
   return (
     <Router>
+      <TopNavigation />
       <Suspense fallback={<Loading />}>
-        <TopNavigation />
-
         <Switch>
           <Route path="/login">
             <Login />

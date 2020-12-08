@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
+import { Container } from "react-bootstrap";
 
 export const HomeCounter = () => {
   const [state, setState] = useState({ seconds: 0 });
 
   useEffect(() => {
-    const subscribe = setInterval(ticker(), 1000);
-    return clearInterval(subscribe);
-  }, [state]);
+    const interval = setInterval(() => {
+      setState((state) => ({
+        seconds: state.seconds + 1,
+      }));
+    }, 1000);
+    return interval;
+  }, []);
 
-  const ticker = () => {
-    setState((state) => ({ seconds: state.seconds + 1 }));
-  };
-
-  return <div>Seconds : {state.seconds}</div>;
+  return <Container className="p-3">Seconds : {state.seconds}</Container>;
 };

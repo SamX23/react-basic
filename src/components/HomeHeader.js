@@ -17,11 +17,6 @@ export default function HomeHeader({
     }
   `;
 
-  const ThemeButton = styled(Button)`
-    padding: 2rem;
-    margin: 2rem;
-  `;
-
   return (
     <div className="home__top">
       <HeaderJumbotron>
@@ -36,10 +31,10 @@ export default function HomeHeader({
           </Badge>
         </Button>
         <Button onClick={() => setCounter(0)}>Reset</Button>
-        <Button onClick={toggleTheme}>Change Block</Button>
-        <ThemeButton style={themes} variant="primary">
+        <Button onClick={toggleTheme}>Change Block Color</Button>
+        <Button style={themes} variant="primary">
           Learn more
-        </ThemeButton>
+        </Button>
       </HeaderJumbotron>
     </div>
   );
