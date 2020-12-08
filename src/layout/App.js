@@ -37,7 +37,6 @@ export default function App() {
             <Home />
           </Route>
         </Switch>
-
         <Footer />
       </Suspense>
     </Router>
