@@ -1,5 +1,6 @@
 export const initialState = {
   episodes: [],
+  github: {},
   favourites: [],
   visited: [],
   user: {
@@ -25,6 +26,9 @@ export function reducer(state, action) {
 
     case "FETCH_DATA":
       return { ...state, episodes: action.item };
+
+    case "FETCH_GITHUB":
+      return { ...state, github: action.item };
 
     case "ADD_FAV":
       return { ...state, favourites: [...state.favourites, action.item] };

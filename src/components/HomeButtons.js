@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Container, Button, Badge } from "react-bootstrap";
 import styled from "@emotion/styled";
 
