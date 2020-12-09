@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Store } from "../context/store";
 import JumboTron from "../components/JumboTron.js";
-import profile from "../profile.json";
+import profile from "../constant/profile.json";
 import RequestUserRepos from "../components/RequestUserRepos";
 
 export default function About() {

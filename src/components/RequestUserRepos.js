@@ -18,7 +18,6 @@ export default function RequestUserRepos({ username }) {
   }, [dispatch, url]);
 
   const git = state.github;
-  console.log(git);
 
   return (
     <ul className="list-group mx-auto mb-5 w-75">

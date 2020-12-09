@@ -10,6 +10,8 @@ const About = lazy(() => import("./About"));
 const Rest = lazy(() => import("./Rest"));
 const Register = lazy(() => import("./Register"));
 const Login = lazy(() => import("./Login"));
+const Account = lazy(() => import("./Account"));
+
 const ContextApiContainer = lazy(() => import("./ContextApi"));
 
 export default function App() {
@@ -18,6 +20,9 @@ export default function App() {
       <TopNavigation />
       <Suspense fallback={<Loading />}>
         <Switch>
+          <Route path="/account">
+            <Account />
+          </Route>
           <Route path="/login">
             <Login />
           </Route>
