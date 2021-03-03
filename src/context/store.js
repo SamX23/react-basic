@@ -16,11 +16,11 @@ export function UpdateContext() {
 export function StoreProvider({ children }) {
   const [themeState, setThemeState] = useState(true);
   const [state, dispatch] = useReducer(reducer, initialState);
-  
+
   const value = {
-    state: state,
-    dispatch: dispatch,
-    themeState: themeState,
+    state,
+    dispatch,
+    themeState,
     toggleTheme: () => {
       setThemeState((prevTheme) => !prevTheme);
     },

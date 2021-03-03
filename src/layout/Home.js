@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import { SetContext, UpdateContext } from "../context/store";
 import styled from "@emotion/styled";
+import { SetContext, UpdateContext } from "../context/store";
 
 import HomeHeader from "../components/HomeHeader";
 import Items from "../components/Items";
-import JumboTron from "../components/JumboTron.js";
+import JumboTron from "../components/JumboTron";
 import HomeButtons from "../components/HomeButtons";
 import { HomeTypeBox } from "../components/HomeTypeBox";
 import { HomeCounter } from "../components/HomeCounter";

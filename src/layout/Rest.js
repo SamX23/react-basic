@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import JumboTron from "../components/JumboTron.js";
-import Loading from "../components/Loading";
-
 import { Container, Card, CardColumns } from "react-bootstrap";
+import Loading from "../components/Loading";
+import JumboTron from "../components/JumboTron";
 
 export default function Rest() {
   const [pokeDetails, setPokeDetails] = useState([]);

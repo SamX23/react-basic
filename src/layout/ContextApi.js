@@ -45,7 +45,7 @@ function ContextApiContainer() {
 
   const props = {
     episodes: state.episodes,
-    toggleFav: toggleFav,
+    toggleFav,
     favourites: state.favourites,
   };
 
@@ -63,6 +63,7 @@ function ContextApiContainer() {
         </div>
         <div className="Episodes__content">
           {state && state.episodes.length > 0 ? (
+            // eslint-disable-next-line react/jsx-props-no-spreading
             <EpisodesList {...props} />
           ) : (
             <Loading />

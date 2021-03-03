@@ -6,9 +6,9 @@ export default function Items() {
 
   return (
     <ul>
-      {book.map((item) => {
-        return <Item key={item} item={item} />;
-      })}
+      {book.map((item) => (
+        <Item key={item} item={item} />
+      ))}
     </ul>
   );
 }

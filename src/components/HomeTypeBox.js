@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form } from "react-bootstrap";
 
-export const HomeTypeBox = () => {
+const HomeTypeBox = () => {
   const [textArea, setTextArea] = useState("");
 
   return (
@@ -24,3 +24,5 @@ export const HomeTypeBox = () => {
     </Container>
   );
 };
+
+export default HomeTypeBox;

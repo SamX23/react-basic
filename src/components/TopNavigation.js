@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import { Store } from "../context/store";
 
 import { Nav, Navbar, NavDropdown, Image } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 
 import styled from "@emotion/styled";
+import { Store } from "../context/store";
 
 export default function TopNavigation() {
   const { state } = useContext(Store);

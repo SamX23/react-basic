@@ -5,7 +5,7 @@ import { Store } from "../context/store";
 
 export default function Account() {
   const { state } = useContext(Store);
-  const user = state.user;
+  const { user } = state;
   return (
     <div className="about__registeredUser text-center">
       {user.login ? (
@@ -21,7 +21,7 @@ export default function Account() {
           {/* <button>
             <Link to="/login">Login</Link>
           </button> */}
-          <button>
+          <button type="button">
             <Link to="/register">Register</Link>
           </button>
         </div>
