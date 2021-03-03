@@ -13,7 +13,7 @@ export default function TopNavigation() {
     background-color: #20232a;
     min-height: 6vh;
     justify-content: space-around;
-    & > .GitHub {
+    & > .github__link {
       color: white;
     }
   `;
@@ -68,10 +68,10 @@ export default function TopNavigation() {
 
       <Nav>
         <Nav.Link
-          className="GitHub"
+          className="github__link"
           href="https://github.com/SamX23/react-basic/"
         >
-          GitHub
+          Github
         </Nav.Link>
       </Nav>
     </TopNav>
