@@ -41,5 +41,8 @@
   "externals": {
     "react": "react",
     "react-dom": "react-dom"
+  },
+  "devDependencies": {
+    "eslint": "^7.21.0"
   }
 }
