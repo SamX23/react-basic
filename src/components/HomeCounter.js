@@ -3,13 +3,17 @@ import { Container } from "react-bootstrap";
 
 const HomeCounter = () => {
   const [state, setState] = useState({ seconds: 0 });
+  const tick = () =>
+    setState((ticker) => ({
+      seconds: ticker.seconds + 1,
+    }));
 
   useEffect(() => {
-    setInterval(() => {
-      setState((intervalState) => ({
-        seconds: intervalState.seconds + 1,
-      }));
-    }, 1000);
+    setInterval(() => tick(), 1000);
+
+    return function cleanup() {
+      clearInterval(setInterval(tick(), 1000));
+    };
   }, []);
 
   return (
