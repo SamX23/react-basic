@@ -1,3 +1,5 @@
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-return-assign */
 import React, { useState } from "react";
 import { Container, Button, Badge } from "react-bootstrap";
 import styled from "@emotion/styled";

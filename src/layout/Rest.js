@@ -13,9 +13,8 @@ export default function Rest() {
       .then(async (res) => {
         // async await on map
         const getResults = await Promise.all(
-          res.results.map(
-            async (i) =>
-              await fetch(`${URL}/${i.name}`).then((res) => res.json())
+          res.results.map(async (i) =>
+            fetch(`${URL}/${i.name}`).then((result) => result.json())
           )
         );
         setPokeDetails(getResults);

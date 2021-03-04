@@ -6,8 +6,8 @@ import HomeHeader from "../components/HomeHeader";
 import Items from "../components/Items";
 import JumboTron from "../components/JumboTron";
 import HomeButtons from "../components/HomeButtons";
-import { HomeTypeBox } from "../components/HomeTypeBox";
-import { HomeCounter } from "../components/HomeCounter";
+import HomeTypeBox from "../components/HomeTypeBox";
+import HomeCounter from "../components/HomeCounter";
 
 export default function Home() {
   // custom hook calls for setter and getter from context

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Store } from "../context/store";
-import JumboTron from "../components/JumboTron.js";
+import JumboTron from "../components/JumboTron";
 import profile from "../constant/profile.json";
 import RequestUserRepos from "../components/RequestUserRepos";
 
@@ -60,7 +60,7 @@ export default function About() {
         )}
 
         <div className="about__button p-3">
-          <button onClick={showAbout}>
+          <button type="button" onClick={showAbout}>
             {!show ? "Show" : "Hide"} Details from JSON
           </button>
         </div>

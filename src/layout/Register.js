@@ -1,8 +1,8 @@
 import React, { useContext, useState } from "react";
-import { Store } from "../context/store";
 import { useHistory } from "react-router-dom";
 
 import { Form, Container, Row, Button } from "react-bootstrap";
+import { Store } from "../context/store";
 
 export default function Register() {
   const { dispatch } = useContext(Store);

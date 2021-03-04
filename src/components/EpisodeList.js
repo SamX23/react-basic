@@ -9,7 +9,7 @@ export default function EpisodeList({ episodes, toggleFav, favourites }) {
         <div>
           Season: {episode.season} | Number: {episode.number}
         </div>
-        <button onClick={() => toggleFav(episode)}>
+        <button type="button" onClick={() => toggleFav(episode)}>
           {favourites.find((fav) => fav.id === episode.id) ? "Remove" : "Fav"}
         </button>
       </div>
