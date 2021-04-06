@@ -1,6 +1,6 @@
 # React Basic
 
-## Dummy project for deepen my react knowledge
+## Dummy react project
 
 Built using :
 
