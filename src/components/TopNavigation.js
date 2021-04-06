@@ -48,9 +48,6 @@ export default function TopNavigation() {
           <LinkContainer to="/rest">
             <NavDropdown.Item>Rest</NavDropdown.Item>
           </LinkContainer>
-          <LinkContainer to="/context-api">
-            <NavDropdown.Item>Rest & Context Api</NavDropdown.Item>
-          </LinkContainer>
         </NavDropdown>
 
         <LinkContainer to="/login">

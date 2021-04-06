@@ -12,8 +12,6 @@ const Register = lazy(() => import("./Register"));
 const Login = lazy(() => import("./Login"));
 const Account = lazy(() => import("./Account"));
 
-const ContextApiContainer = lazy(() => import("./ContextApi"));
-
 export default function App() {
   return (
     <Router>
@@ -28,9 +26,6 @@ export default function App() {
           </Route>
           <Route path="/register">
             <Register />
-          </Route>
-          <Route path="/context-api">
-            <ContextApiContainer />
           </Route>
           <Route path="/rest">
             <Rest />
